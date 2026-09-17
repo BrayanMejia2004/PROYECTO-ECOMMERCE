@@ -1,0 +1,37 @@
+{
+  "nombre": "JoeFox Gris Negro",
+  "slug": "joefox-gris-negro",
+  "categoria": "relojes",
+  "subcategoria": "JoeFox",
+  "marca": "JoeFox",
+  "precio": 120000,
+  "descripcion": "Edición Gris/Negro de la colección JoeFox. Aros y esfera en tonos grises con detalles negros que le dan un acabado deportivo y moderno. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Sistema",
+      "detalle": "Movimiento doble (análogo y digital independiente)."
+    },
+    {
+      "etiqueta": "Material",
+      "detalle": "Caja y pulso en acero inoxidable de alta resistencia."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua para el uso diario cotidiano."
+    },
+    {
+      "etiqueta": "Funciones",
+      "detalle": "Calendario completo, alarma, cronómetro y luz LED nocturna."
+    },
+    {
+      "etiqueta": "Diseño",
+      "detalle": "Bisel táctico deportivo con acabados premium en negro."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-joefox-GRISNEGRO.webp",
+  "galeria": [],
+  "alt": "Reloj JoeFox Gris Negro de la colección CronoVisión con esfera gris y detalles negros"
+}

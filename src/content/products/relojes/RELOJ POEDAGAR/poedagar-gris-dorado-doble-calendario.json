@@ -1,0 +1,33 @@
+{
+  "nombre": "Poedagar Gris Dorado Doble Calendario",
+  "slug": "poedagar-gris-dorado-doble-calendario",
+  "categoria": "relojes",
+  "subcategoria": "Poedagar",
+  "marca": "Poedagar",
+  "precio": 100000,
+  "descripcion": "Reloj Poedagar Gris/Dorado con doble calendario. Esfera gris con acentos dorados y ventana doble de fecha y día, sobrio y elegante. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Calendario",
+      "detalle": "Doble calendario (fecha y día)."
+    },
+    {
+      "etiqueta": "Cristal",
+      "detalle": "Cristal de alta dureza resistente a rayones."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua hasta 3 ATM."
+    },
+    {
+      "etiqueta": "Visibilidad",
+      "detalle": "Manecilla luminosa para lectura nocturna."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-poedagar-GRISDORADODOBLECALENDARIO.webp",
+  "galeria": [],
+  "alt": "Reloj Poedagar Gris Dorado con doble calendario de la colección CronoVisión"
+}

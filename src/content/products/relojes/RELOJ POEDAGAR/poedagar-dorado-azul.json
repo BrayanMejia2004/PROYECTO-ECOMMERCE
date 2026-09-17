@@ -1,0 +1,33 @@
+{
+  "nombre": "Poedagar Dorado Azul",
+  "slug": "poedagar-dorado-azul",
+  "categoria": "relojes",
+  "subcategoria": "Poedagar",
+  "marca": "Poedagar",
+  "precio": 100000,
+  "descripcion": "Reloj Poedagar Dorado/Azul. Esfera dorada con acentos azules, lujo y elegancia para destacar en cualquier ocasión. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Calendario",
+      "detalle": "Doble calendario (fecha y día)."
+    },
+    {
+      "etiqueta": "Cristal",
+      "detalle": "Cristal de alta dureza resistente a rayones."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua hasta 3 ATM."
+    },
+    {
+      "etiqueta": "Visibilidad",
+      "detalle": "Manecilla luminosa para lectura nocturna."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-poedagar-DORADOAZUL.webp",
+  "galeria": [],
+  "alt": "Reloj Poedagar Dorado Azul de la colección CronoVisión con esfera dorada y acentos azules"
+}

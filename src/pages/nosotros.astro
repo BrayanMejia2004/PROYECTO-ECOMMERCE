@@ -1,0 +1,64 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Logotipo from '../components/Logotipo.astro'
+import { whatsappLink, MENSAJE_GENERAL } from '../lib/site'
+---
+
+<Layout
+	title="Nosotros"
+	description="Conoce la historia de CronoVisión: pasión por los relojes, con asesoría personalizada y productos originales en Colombia."
+>
+	<section class="mx-auto max-w-4xl px-4 py-16 sm:px-6">
+		<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">Nosotros</p>
+		<h1 class="mt-2 font-serif text-4xl text-graphite sm:text-5xl">
+			El tiempo y el estilo, <span class="italic text-gold-deep">juntos.</span>
+		</h1>
+
+		<div class="mt-10 space-y-5 text-base leading-relaxed text-smoke">
+			<p>
+				En <strong class="text-graphite">CronoVisión</strong> creemos que los accesorios cuentan una
+				historia. Un reloj habla del tiempo que valoras y del estilo que te define.
+				Por eso elegimos cada pieza con el mismo cuidado con el que te asesoramos.
+			</p>
+			<p>
+				Nacimos como una tienda cercana: sin filas ni complicaciones. Aquí eliges tu producto,
+				te escribimos por WhatsApp y coordinamos tu compra de forma sencilla, con envíos a toda Colombia.
+			</p>
+			<p>
+				Nuestra promesa es simple: <strong class="text-graphite">productos originales, precios claros y
+				atención que responde</strong>. Así de fácil.
+			</p>
+		</div>
+	</section>
+
+	<section class="border-t border-line bg-white">
+		<div class="mx-auto grid max-w-4xl gap-6 px-4 py-16 sm:grid-cols-3 sm:px-6">
+			{[
+				{ t: 'Calidad', d: 'Cada pieza pasa por una selección cuidadosa antes de llegar al catálogo.' },
+				{ t: 'Confianza', d: 'Compra sin sustos: garantía, stock real y envío con seguimiento.' },
+				{ t: 'Cercanía', d: 'Un ser humano al otro lado del WhatsApp para ayudarte a decidir.' },
+			].map((v) => (
+				<div class="rounded-3xl border border-line p-7">
+					<h3 class="font-serif text-xl text-graphite">{v.t}</h3>
+					<p class="mt-2 text-sm leading-relaxed text-smoke">{v.d}</p>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<section class="mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
+		<Logotipo size={52} class="mx-auto" />
+		<h2 class="mt-6 font-serif text-3xl text-graphite">¿Hablamos?</h2>
+		<p class="mx-auto mt-3 max-w-md text-sm text-smoke">
+			Cuéntanos qué buscas y te ayudamos a elegir el reloj perfecto.
+		</p>
+		<a
+			href={whatsappLink(MENSAJE_GENERAL)}
+			target="_blank"
+			rel="noopener"
+			class="mt-7 inline-block rounded-full bg-[#25d366] px-8 py-3.5 text-sm font-bold text-ink transition-opacity hover:opacity-90"
+		>
+			Escribir por WhatsApp
+		</a>
+	</section>
+</Layout>

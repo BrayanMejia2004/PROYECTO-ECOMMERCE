@@ -1,0 +1,33 @@
+{
+  "nombre": "Poedagar Gris Dorado Azul",
+  "slug": "poedagar-gris-dorado-azul",
+  "categoria": "relojes",
+  "subcategoria": "Poedagar",
+  "marca": "Poedagar",
+  "precio": 100000,
+  "descripcion": "Reloj Poedagar Gris/Dorado/Azul. Combinación de gris, dorado y azul en un diseño moderno y sofisticado. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Calendario",
+      "detalle": "Doble calendario (fecha y día)."
+    },
+    {
+      "etiqueta": "Cristal",
+      "detalle": "Cristal de alta dureza resistente a rayones."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua hasta 3 ATM."
+    },
+    {
+      "etiqueta": "Visibilidad",
+      "detalle": "Manecilla luminosa para lectura nocturna."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-poedagar-GRISDORADOAZUL.webp",
+  "galeria": [],
+  "alt": "Reloj Poedagar Gris Dorado Azul de la colección CronoVisión con esfera tricolor"
+}

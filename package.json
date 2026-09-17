@@ -1,0 +1,33 @@
+{
+  "name": "proyecto-ecommerce",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"prebuild": "node scripts/optimize-images.mjs",
+		"images": "node scripts/optimize-images.mjs",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/vercel": "^11.0.10",
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/playfair-display": "^5.3.0",
+    "@keystatic/astro": "^6.0.0",
+    "@keystatic/core": "^0.6.9",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "allowScripts": {
+    "esbuild": true
+  },
+  "devDependencies": {
+    "sharp": "^0.35.4"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "nombre": "Poedagar Dorado Azul Doble Calendario",
+  "slug": "poedagar-dorado-azul-doble-calendario",
+  "categoria": "relojes",
+  "subcategoria": "Poedagar",
+  "marca": "Poedagar",
+  "precio": 100000,
+  "descripcion": "Reloj Poedagar Dorado/Azul con doble calendario. Esfera dorada con acentos azules y ventana doble de fecha y día, lujo y precisión en un solo diseño. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Calendario",
+      "detalle": "Doble calendario (fecha y día)."
+    },
+    {
+      "etiqueta": "Cristal",
+      "detalle": "Cristal de alta dureza resistente a rayones."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua hasta 3 ATM."
+    },
+    {
+      "etiqueta": "Visibilidad",
+      "detalle": "Manecilla luminosa para lectura nocturna."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-poedagar-DORADOAZULDOBLECALENDARIO.webp",
+  "galeria": [],
+  "alt": "Reloj Poedagar Dorado Azul con doble calendario de la colección CronoVisión"
+}

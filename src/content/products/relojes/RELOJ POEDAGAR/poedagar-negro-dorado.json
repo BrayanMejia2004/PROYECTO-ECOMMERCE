@@ -1,0 +1,33 @@
+{
+  "nombre": "Poedagar Negro Dorado",
+  "slug": "poedagar-negro-dorado",
+  "categoria": "relojes",
+  "subcategoria": "Poedagar",
+  "marca": "Poedagar",
+  "precio": 100000,
+  "descripcion": "Reloj Poedagar Negro/Dorado. Acentos dorados sobre esfera negra, elegancia y distinción en cada detalle. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Calendario",
+      "detalle": "Doble calendario (fecha y día)."
+    },
+    {
+      "etiqueta": "Cristal",
+      "detalle": "Cristal de alta dureza resistente a rayones."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua hasta 3 ATM."
+    },
+    {
+      "etiqueta": "Visibilidad",
+      "detalle": "Manecilla luminosa para lectura nocturna."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-poedagar-NEGRODORADO.webp",
+  "galeria": [],
+  "alt": "Reloj Poedagar Negro Dorado de la colección CronoVisión con esfera negra y acentos dorados"
+}

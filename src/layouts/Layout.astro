@@ -1,0 +1,66 @@
+---
+import '../styles/global.css'
+import '@fontsource/inter/400.css'
+import '@fontsource/inter/500.css'
+import '@fontsource/inter/600.css'
+import '@fontsource/inter/700.css'
+import '@fontsource/playfair-display/400.css'
+import '@fontsource/playfair-display/500.css'
+import '@fontsource/playfair-display/600.css'
+import '@fontsource/playfair-display/700.css'
+import '@fontsource/playfair-display/400-italic.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import SelectorConsulta from '../components/SelectorConsulta.astro'
+import { SITE } from '../lib/site'
+
+interface Props {
+	title?: string
+	description?: string
+	ogImage?: string
+	type?: 'website' | 'product'
+	canonical?: string
+}
+
+const { title = SITE.name, description = SITE.description, ogImage = '/favicon.svg', type = 'website', canonical } = Astro.props
+
+const ruta = new URL(Astro.url.pathname, SITE.siteUrl)
+const canonicalUrl = canonical ? new URL(canonical, SITE.siteUrl) : ruta
+const titulo = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="theme-color" content="#0e0e0e" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{titulo}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalUrl} />
+
+		<meta property="og:type" content={type} />
+		<meta property="og:locale" content="es_CO" />
+		<meta property="og:site_name" content={SITE.name} />
+		<meta property="og:title" content={titulo} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl} />
+		<meta property="og:image" content={new URL(ogImage, SITE.siteUrl)} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={titulo} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(ogImage, SITE.siteUrl)} />
+
+		<meta name="robots" content="index, follow" />
+	</head>
+	<body class="flex min-h-screen flex-col">
+		<Header />
+		<main class="flex-1">
+			<slot />
+		</main>
+		<Footer />
+		<SelectorConsulta />
+	</body>
+</html>

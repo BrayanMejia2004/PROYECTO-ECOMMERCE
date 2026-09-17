@@ -1,0 +1,266 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProductCard from '../components/ProductCard.astro'
+import Logotipo from '../components/Logotipo.astro'
+import { getCollection } from 'astro:content'
+import { whatsappLink, MENSAJE_GENERAL } from '../lib/site'
+
+const MENSAJE_PROMO_POEDAGAR =
+	'Hola CronoVisión, me interesa la promoción de relojes Poedagar: quiero armar un combo de 2. ¿Me cuentas más?'
+
+const productos = (await getCollection('products', ({ data }) => data.activo)).sort(
+	(a, b) => Number(b.data.destacado) - Number(a.data.destacado)
+)
+const destacados = productos.filter((p) => p.data.destacado).slice(0, 4)
+
+const beneficios = [
+	{ titulo: 'Productos originales', texto: 'Selección curada y autenticidad garantizada.' },
+	{ titulo: 'Envíos a todo Colombia', texto: 'Recibe tu pedido donde estés, seguro y rápido.' },
+	{ titulo: 'Atención personalizada', texto: 'Te asesoramos por WhatsApp antes y después de comprar.' },
+	{ titulo: 'Pago seguro y flexible', texto: 'Coordinamos el pago contigo de forma sencilla.' },
+]
+
+const testimonios = [
+	{
+		nombre: 'Mariana R.',
+		texto: 'Compré mi primer reloj de la tienda y la asesoría por WhatsApp fue excelente. Llegó perfecto a Bogotá.',
+	},
+	{
+		nombre: 'Andrés G.',
+		texto: 'El reloj llegó impecable y muy bien empacado. La calidad se nota en cada detalle.',
+	},
+]
+---
+
+<Layout
+	title="Relojes elegantes"
+	description="Descubre la colección de relojes de CronoVisión en Colombia. Productos originales, envío a todo el país y asesoría personalizada por WhatsApp."
+	ogImage="/imagenes/productos/reloj-poedagar-GRISDORADONEGRO.webp"
+>
+	<!-- Hero -->
+	<section class="bg-ink text-ivory">
+		<div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:py-28">
+			<div>
+				<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Colección 2026</p>
+				<h1 class="mt-4 font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+					El tiempo se <span class="italic text-gold">lleva bien</span> con el estilo.
+				</h1>
+				<p class="mt-5 max-w-lg text-base leading-relaxed text-ivory/75">
+					Descubre una selección curada de relojes diseñados para quienes
+					miran cada detalle. Asesoría personal, precios en pesos y envíos a toda Colombia.
+				</p>
+				<div class="mt-8 flex flex-wrap gap-3">
+					<a
+						href="/relojes"
+						class="rounded-full bg-gold px-7 py-3.5 text-sm font-bold text-ink transition-colors hover:bg-gold-light"
+					>
+						Ver catálogo
+					</a>
+				</div>
+			</div>
+
+			<div class="relative hidden md:block">
+				<img
+					src="/imagenes/productos/reloj-poedagar-GRISDORADONEGRO.webp"
+					alt="Reloj Poedagar Gris Dorado Negro de la colección CronoVisión"
+					width="1200"
+					height="1200"
+					loading="eager"
+					class="mx-auto aspect-square w-full max-w-md rounded-[2.5rem] border border-ivory/10 object-cover shadow-2xl shadow-black/50"
+				/>
+				<div class="absolute -left-4 bottom-8 rounded-2xl border border-ivory/10 bg-graphite/90 px-5 py-3 backdrop-blur">
+					<p class="text-xs uppercase tracking-widest text-gold">Envío nacional</p>
+					<p class="font-serif text-sm text-ivory">Llega a tu ciudad</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Beneficios / confianza -->
+	<section class="border-b border-line bg-white">
+		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+			{
+				beneficios.map((b) => (
+					<div class="flex items-start gap-3">
+						<span class="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold-deep">
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M20 6L9 17l-5-5" />
+							</svg>
+						</span>
+						<div>
+							<p class="font-semibold text-graphite">{b.titulo}</p>
+							<p class="mt-0.5 text-sm text-smoke">{b.texto}</p>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</section>
+
+	<!-- Categorías -->
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+		<div class="mb-10 flex items-end justify-between">
+			<div>
+				<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">Categorías</p>
+				<h2 class="mt-2 font-serif text-3xl text-graphite sm:text-4xl">Explora la colección</h2>
+			</div>
+		</div>
+
+		<div class="grid gap-6 lg:grid-cols-2">
+			<a
+				href="/relojes"
+				class="group relative overflow-hidden rounded-4xl bg-graphite transition-transform duration-300 hover:-translate-y-1"
+			>
+				<img
+					src="/imagenes/productos/reloj-joefox-DORADO.webp"
+					alt="Categoría Relojes"
+					width="1200"
+					height="1200"
+					loading="lazy"
+					class="aspect-4/3 w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+				/>
+				<div class="absolute inset-0 bg-linear-to-t from-ink/85 via-ink/20 to-transparent" />
+				<div class="absolute bottom-0 left-0 p-7">
+					<p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Relojes</p>
+					<p class="mt-2 max-w-xs text-sm text-ivory/75">Cronógrafos y clásicos de precisión para cada ocasión.</p>
+					<span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-ivory">
+						Ver catálogo
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M5 12h14M13 6l6 6-6 6" />
+						</svg>
+					</span>
+				</div>
+			</a>
+
+			<a
+				href={whatsappLink(MENSAJE_PROMO_POEDAGAR)}
+				target="_blank"
+				rel="noopener"
+				class="group relative flex flex-col overflow-hidden rounded-4xl bg-graphite transition-transform duration-300 hover:-translate-y-1"
+			>
+				<span class="absolute left-0 top-5 z-10 rounded-r-full bg-gold px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-ink">
+					Promoción
+				</span>
+				<div class="flex flex-1 items-stretch gap-3 p-5">
+					<img
+						src="/imagenes/productos/reloj-poedagar-GRISDORADONEGRO.webp"
+						alt="Reloj Poedagar Gris Dorado Negro en promoción"
+						width="1200"
+						height="1200"
+						loading="lazy"
+						class="aspect-square w-1/2 rounded-2xl object-cover"
+					/>
+					<img
+						src="/imagenes/productos/reloj-poedagar-DORADOAZUL.webp"
+						alt="Reloj Poedagar Dorado Azul en promoción"
+						width="1200"
+						height="1200"
+						loading="lazy"
+						class="aspect-square w-1/2 rounded-2xl object-cover"
+					/>
+				</div>
+				<div class="px-7 pb-7">
+					<p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Poedagar</p>
+					<h3 class="mt-2 font-serif text-2xl leading-snug text-ivory">
+						Elige 2 relojes Poedagar y arma tu oferta
+					</h3>
+					<p class="mt-2 text-sm leading-relaxed text-ivory/75">
+						Combina los colores que más te gusten. Escríbenos por WhatsApp y coordinamos tu promoción.
+					</p>
+					<span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gold">
+						Armar promoción
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M5 12h14M13 6l6 6-6 6" />
+						</svg>
+					</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<!-- Destacados -->
+	<section class="bg-white">
+		<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+			<div class="mb-10 flex items-end justify-between gap-4">
+				<div>
+					<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">Destacados</p>
+					<h2 class="mt-2 font-serif text-3xl text-graphite sm:text-4xl">Los favoritos de la semana</h2>
+				</div>
+				<a href="/relojes" class="hidden shrink-0 text-sm font-bold text-gold-deep hover:text-gold sm:block">
+					Ver todo →
+				</a>
+			</div>
+
+			{
+				destacados.length > 0 ? (
+					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+						{destacados.map((p) => <ProductCard producto={p} />)}
+					</div>
+				) : (
+					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+						{productos.slice(0, 4).map((p) => <ProductCard producto={p} />)}
+					</div>
+				)
+			}
+		</div>
+	</section>
+
+	<!-- Cómo comprar -->
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+		<div class="grid gap-6 md:grid-cols-3">
+			{[
+				{ n: '01', t: 'Elige tus productos', d: 'Navega por la colección y añade a tu lista lo que más te guste.' },
+				{ n: '02', t: 'Escríbenos por WhatsApp', d: 'Te llega tu lista armada automáticamente. Pregunta precios, tallas y stock.' },
+				{ n: '03', t: 'Recibe en tu casa', d: 'Coordinamos pago y envío. Tu pedido llega a todo Colombia.' },
+			].map((s) => (
+				<div class="rounded-3xl border border-line bg-white p-8">
+					<p class="font-serif text-5xl italic text-gold/40">{s.n}</p>
+					<h3 class="mt-4 text-lg font-bold text-graphite">{s.t}</h3>
+					<p class="mt-2 text-sm leading-relaxed text-smoke">{s.d}</p>
+				</div>
+			))}
+		</div>
+	</section>
+
+	<!-- Testimonios -->
+	<section class="bg-ink text-ivory">
+		<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+			<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold">Clientes felices</p>
+			<h2 class="mt-2 font-serif text-3xl text-ivory sm:text-4xl">Comprar con confianza</h2>
+			<div class="mt-10 grid gap-6 md:grid-cols-2">
+				{
+					testimonios.map((t) => (
+						<figure class="rounded-3xl border border-ivory/10 bg-graphite p-8">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="#c9a227" aria-hidden="true">
+								<path d="M10 7H7a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h1v-2H7a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h3V7Zm11 0h-3a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h1v-2h-1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h3V7Z" />
+							</svg>
+							<blockquote class="mt-4 text-base leading-relaxed text-ivory/85">“{t.texto}”</blockquote>
+							<figcaption class="mt-5 text-sm font-semibold text-gold">{t.nombre}</figcaption>
+						</figure>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA final -->
+	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
+		<div class="flex flex-col items-center gap-6 rounded-4xl bg-graphite px-8 py-14 text-center">
+			<Logotipo size={46} />
+			<h2 class="max-w-xl font-serif text-3xl leading-snug text-ivory sm:text-4xl">
+				¿Listo para encontrar tu próximo <span class="italic text-gold">compañero de estilo?</span>
+			</h2>
+			<p class="max-w-md text-sm text-ivory/70">
+				Escríbenos directamente y te asesoramos sin compromiso.
+			</p>
+			<a
+				href={whatsappLink(MENSAJE_GENERAL)}
+				target="_blank"
+				rel="noopener"
+				class="rounded-full bg-[#25d366] px-8 py-3.5 text-sm font-bold text-ink transition-opacity hover:opacity-90"
+			>
+				Escribir por WhatsApp
+			</a>
+		</div>
+	</section>
+</Layout>

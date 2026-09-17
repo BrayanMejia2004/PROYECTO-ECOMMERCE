@@ -1,0 +1,37 @@
+{
+  "nombre": "JoeFox Dorado Negro",
+  "slug": "joefox-dorado-negro",
+  "categoria": "relojes",
+  "subcategoria": "JoeFox",
+  "marca": "JoeFox",
+  "precio": 120000,
+  "descripcion": "Edición Dorado/Negro de la colección JoeFox. Detalles dorados sobre esfera negra, una combinación sofisticada entre lujo y deportividad. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Sistema",
+      "detalle": "Movimiento doble (análogo y digital independiente)."
+    },
+    {
+      "etiqueta": "Material",
+      "detalle": "Caja y pulso en acero inoxidable de alta resistencia."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua para el uso diario cotidiano."
+    },
+    {
+      "etiqueta": "Funciones",
+      "detalle": "Calendario completo, alarma, cronómetro y luz LED nocturna."
+    },
+    {
+      "etiqueta": "Diseño",
+      "detalle": "Bisel táctico deportivo con acabados premium en negro."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-joefox-DORADONEGRO.webp",
+  "galeria": [],
+  "alt": "Reloj JoeFox Dorado Negro de la colección CronoVisión con esfera negra y detalles dorados"
+}

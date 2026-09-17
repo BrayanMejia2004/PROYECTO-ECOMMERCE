@@ -1,0 +1,37 @@
+{
+  "nombre": "JoeFox Negro",
+  "slug": "joefox-negro",
+  "categoria": "relojes",
+  "subcategoria": "JoeFox",
+  "marca": "JoeFox",
+  "precio": 120000,
+  "descripcion": "Edición Negra de la colección JoeFox. Aros y esfera en negro con acabado mate, un diseño sobrio y moderno ideal para el uso diario. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Sistema",
+      "detalle": "Movimiento doble (análogo y digital independiente)."
+    },
+    {
+      "etiqueta": "Material",
+      "detalle": "Caja y pulso en acero inoxidable de alta resistencia."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua para el uso diario cotidiano."
+    },
+    {
+      "etiqueta": "Funciones",
+      "detalle": "Calendario completo, alarma, cronómetro y luz LED nocturna."
+    },
+    {
+      "etiqueta": "Diseño",
+      "detalle": "Bisel táctico deportivo con acabados premium en negro."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-joefox-NEGRO.webp",
+  "galeria": [],
+  "alt": "Reloj JoeFox Negro de la colección CronoVisión con esfera y aros negros"
+}

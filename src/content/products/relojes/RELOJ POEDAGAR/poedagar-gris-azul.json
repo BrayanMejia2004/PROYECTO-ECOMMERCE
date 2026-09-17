@@ -1,0 +1,33 @@
+{
+  "nombre": "Poedagar Gris Azul",
+  "slug": "poedagar-gris-azul",
+  "categoria": "relojes",
+  "subcategoria": "Poedagar",
+  "marca": "Poedagar",
+  "precio": 100000,
+  "descripcion": "Reloj Poedagar Gris/Azul. Esfera gris con acentos azules, estilo moderno y sobrio para el uso diario. Incluye garantía y envío a todo Colombia.",
+  "caracteristicas": [
+    {
+      "etiqueta": "Calendario",
+      "detalle": "Doble calendario (fecha y día)."
+    },
+    {
+      "etiqueta": "Cristal",
+      "detalle": "Cristal de alta dureza resistente a rayones."
+    },
+    {
+      "etiqueta": "Resistencia",
+      "detalle": "Resistente al agua hasta 3 ATM."
+    },
+    {
+      "etiqueta": "Visibilidad",
+      "detalle": "Manecilla luminosa para lectura nocturna."
+    }
+  ],
+  "destacado": true,
+  "activo": true,
+  "stock": true,
+  "imagen": "/imagenes/productos/reloj-poedagar-GRISAZUL.webp",
+  "galeria": [],
+  "alt": "Reloj Poedagar Gris Azul de la colección CronoVisión con esfera gris y acentos azules"
+}
