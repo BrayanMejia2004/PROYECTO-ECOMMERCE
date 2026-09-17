@@ -6,7 +6,7 @@ export const SITE = {
 	currency: 'COP',
 	// WhatsApp en formato internacional sin "+" (código 57 + 3024550409)
 	whatsapp: '573024550409',
-	siteUrl: 'https://cronovision.com.co',
+	siteUrl: 'https://cronovision.vercel.app',
 }
 
 export type Categoria = 'relojes'

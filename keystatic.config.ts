@@ -78,8 +78,7 @@ const products = collection({
 export default config({
 	storage: {
 		kind: 'github',
-		// TODO: reemplázalo por tu usuariode GitHub y el nombre del repositorio
-		repo: 'TU_USUARIO/PROYECTO-ECOMMERCE',
+		repo: 'BrayanMejia2004/PROYECTO-ECOMMERCE',
 	},
 	collections: { products },
 })
