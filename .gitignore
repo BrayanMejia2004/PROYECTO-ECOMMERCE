@@ -2,7 +2,6 @@
 dist/
 # generated types
 .astro/
-scripts/
 
 # dependencies
 node_modules/
@@ -32,6 +31,3 @@ pnpm-debug.log*
 
 # config local / del entorno
 .env.example
-astro.config.mjs
-keystatic.config.ts
-tsconfig.json
