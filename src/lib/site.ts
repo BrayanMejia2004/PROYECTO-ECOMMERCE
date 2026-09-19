@@ -1,8 +1,8 @@
 export const SITE = {
 	name: 'CronoVisión',
-	tagline: 'Relojes elegantes',
+	tagline: 'Precisión & Presencia',
 	description:
-		'CronoVisión es una tienda de relojes de diseño en Colombia. Descubre una selección curada de relojes elegantes con atención personalizada por WhatsApp.',
+		'CronoVisión | Curaduría de relojes en Colombia. Piezas seleccionadas con verificación en vivo por WhatsApp y despachos asegurados a todo el país.',
 	currency: 'COP',
 	// WhatsApp en formato internacional sin "+" (código 57 + 3024550409)
 	whatsapp: '573024550409',
@@ -15,7 +15,7 @@ export const CATEGORIAS: { key: Categoria; nombre: string; descripcion: string }
 	{
 		key: 'relojes',
 		nombre: 'Relojes',
-		descripcion: 'Cronógrafos y clásicos de precisión para cada ocasión.',
+		descripcion: 'Relojes para hombre en Colombia: cronógrafos y modelos de distinción.',
 	},
 ]
 

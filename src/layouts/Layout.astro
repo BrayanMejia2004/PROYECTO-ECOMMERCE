@@ -1,32 +1,38 @@
 ---
-import '../styles/global.css'
-import '@fontsource/inter/400.css'
-import '@fontsource/inter/500.css'
-import '@fontsource/inter/600.css'
-import '@fontsource/inter/700.css'
-import '@fontsource/playfair-display/400.css'
-import '@fontsource/playfair-display/500.css'
-import '@fontsource/playfair-display/600.css'
-import '@fontsource/playfair-display/700.css'
-import '@fontsource/playfair-display/400-italic.css'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import SelectorConsulta from '../components/SelectorConsulta.astro'
-import { SITE } from '../lib/site'
+import "../styles/global.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/playfair-display/400.css";
+import "@fontsource/playfair-display/500.css";
+import "@fontsource/playfair-display/600.css";
+import "@fontsource/playfair-display/700.css";
+import "@fontsource/playfair-display/400-italic.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SelectorConsulta from "../components/SelectorConsulta.astro";
+import { SITE } from "../lib/site";
 
 interface Props {
-	title?: string
-	description?: string
-	ogImage?: string
-	type?: 'website' | 'product'
-	canonical?: string
+	title?: string;
+	description?: string;
+	ogImage?: string;
+	type?: "website" | "product";
+	canonical?: string;
 }
 
-const { title = SITE.name, description = SITE.description, ogImage = '/favicon.svg', type = 'website', canonical } = Astro.props
+const {
+	title = SITE.name,
+	description = SITE.description,
+	ogImage = "/Favicon.svg",
+	type = "website",
+	canonical,
+} = Astro.props;
 
-const ruta = new URL(Astro.url.pathname, SITE.siteUrl)
-const canonicalUrl = canonical ? new URL(canonical, SITE.siteUrl) : ruta
-const titulo = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`
+const ruta = new URL(Astro.url.pathname, SITE.siteUrl);
+const canonicalUrl = canonical ? new URL(canonical, SITE.siteUrl) : ruta;
+const titulo = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`;
 ---
 
 <!doctype html>
@@ -34,9 +40,16 @@ const titulo = title.includes(SITE.name) ? title : `${title} | ${SITE.name}`
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="theme-color" content="#0e0e0e" />
+		<link rel="icon" type="image/svg+xml" href="/Favicon.svg" />
+		<link rel="alternate icon" href="/favicon.svg" />
+		<meta name="theme-color" content="#0a0b0d" />
 		<meta name="generator" content={Astro.generator} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Syne:wght@600;700;800&display=swap"
+			rel="stylesheet"
+		/>
 		<title>{titulo}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalUrl} />
