@@ -3,49 +3,47 @@ import Logotipo from './Logotipo.astro'
 import { SITE, whatsappLink, MENSAJE_GENERAL } from '../lib/site'
 ---
 
-<footer class="mt-24 bg-ink text-ivory">
+<footer class="mt-24 border-t border-[#212631] bg-ink text-ivory">
 	<div class="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-3">
 		<div>
-			<a href="/" class="flex items-center gap-3">
-				<Logotipo size={34} />
-				<span class="font-serif text-2xl font-semibold tracking-tight">
-					Crono<span class="text-gold">Visión</span>
-				</span>
+			<a href="/" class="inline-block" aria-label="CronoVisión — inicio">
+				<Logotipo variant="primary" height={36} class="h-9 w-auto" />
 			</a>
-			<p class="mt-4 max-w-xs text-sm leading-relaxed text-ivory/70">
-				{SITE.tagline}. Una selección curada de accesorios que definen estilo,
-				con atención personalizada y envíos a todo Colombia.
+			<p class="mt-5 max-w-xs text-sm leading-relaxed text-ivory/70">
+				{SITE.tagline}. Curaduría horológica con verificación en vivo y despachos asegurados a toda Colombia.
 			</p>
 		</div>
 
 		<div>
-			<p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Explora</p>
-			<ul class="mt-4 space-y-2.5 text-sm text-ivory/80">
-				<li><a href="/relojes" class="hover:text-gold">Relojes</a></li>
-				<li><a href="/nosotros" class="hover:text-gold">Nosotros</a></li>
-				<li><a href="/contacto" class="hover:text-gold">Contacto</a></li>
+			<p class="text-xs font-bold uppercase tracking-[0.25em] text-gold">Colección</p>
+			<ul class="mt-4 space-y-2.5 text-sm text-ivory/75">
+				<li><a href="/relojes" class="transition-colors hover:text-gold">Catálogo de Relojes</a></li>
+				<li><a href="/guias" class="transition-colors hover:text-gold">Guías y Reseñas</a></li>
+				<li><a href="/garantia" class="transition-colors hover:text-gold">Garantía y Envíos</a></li>
+				<li><a href="/nosotros" class="transition-colors hover:text-gold">Sobre Nosotros</a></li>
+				<li><a href="/contacto" class="transition-colors hover:text-gold">Contacto Directo</a></li>
 			</ul>
 		</div>
 
 		<div>
-			<p class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Atención</p>
-			<p class="mt-4 text-sm text-ivory/80">
-				¿Preguntas sobre un producto? Escríbenos por WhatsApp y te respondemos enseguida.
+			<p class="text-xs font-bold uppercase tracking-[0.25em] text-gold">Concierge WhatsApp</p>
+			<p class="mt-4 text-sm leading-relaxed text-ivory/75">
+				¿Deseas verificar un modelo en muñeca o confirmar disponibilidad en vivo? Escríbenos directamente.
 			</p>
 			<a
 				href={whatsappLink(MENSAJE_GENERAL)}
 				target="_blank"
 				rel="noopener"
-				class="mt-4 inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-gold-light"
+				class="mt-5 inline-flex items-center gap-2 rounded-full bg-gold px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-ink transition-colors hover:bg-gold-light"
 			>
-				+57 302 455 0409
+				Consultar por WhatsApp
 			</a>
 		</div>
 	</div>
 
-	<div class="border-t border-ivory/10">
-		<p class="mx-auto max-w-7xl px-4 py-6 text-center text-xs text-ivory/50 sm:px-6">
-			© {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.
+	<div class="border-t border-[#212631]">
+		<p class="mx-auto max-w-7xl px-4 py-6 text-center text-xs text-ivory/45 sm:px-6">
+			© {new Date().getFullYear()} {SITE.name}. Marca registrada. Todos los derechos reservados.
 		</p>
 	</div>
 </footer>

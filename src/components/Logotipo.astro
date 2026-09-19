@@ -1,24 +1,67 @@
 ---
 interface Props {
-	size?: number
+	variant?: 'primary' | 'positive' | 'negative' | 'icon'
+	height?: number
+	size?: number // alias for height or icon size
 	class?: string
 }
 
-const { size = 36, class: className = '' } = Astro.props
+const {
+	variant = 'primary',
+	height: heightProp,
+	size,
+	class: className = '',
+} = Astro.props
+
+const h = heightProp ?? size ?? (variant === 'icon' ? 36 : 38)
+// Proporción original de PrimaryHorizontal: 239 x 48 (ratio ~4.979)
+const widthCalculado = variant === 'icon' ? h : Math.round((h * 239) / 48)
 ---
 
-<svg
-	class={className}
-	width={size}
-	height={size}
-	viewBox="0 0 64 64"
-	fill="none"
-	xmlns="http://www.w3.org/2000/svg"
-	aria-hidden="true"
->
-	<circle cx="32" cy="32" r="30" stroke="#c9a227" stroke-width="3.5" />
-	<circle cx="32" cy="32" r="12" fill="#c9a227" />
-	<circle cx="32" cy="32" r="4" fill="#0e0e0e" />
-	<path d="M32 32L32 20" stroke="#0e0e0e" stroke-width="3" stroke-linecap="round" />
-	<path d="M32 32L41 36" stroke="#0e0e0e" stroke-width="3" stroke-linecap="round" />
-</svg>
+{
+	variant === 'icon' ? (
+		<svg
+			class={className}
+			width={h}
+			height={h}
+			viewBox="0 0 48 48"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			aria-hidden="true"
+		>
+			<path
+				d="M28.6195 15.9994L40.1004 35.8809M19.3805 15.9994H42.3423M14.759 23.9991L26.24 4.11755M19.38 31.9998L7.89912 12.1182M28.6205 32.0006H5.6587M33.2405 24L21.7596 43.8816M44.0016 24C44.0016 35.0466 35.0466 44.0016 24 44.0016C12.9534 44.0016 3.99841 35.0466 3.99841 24C3.99841 12.9534 12.9534 3.9984 24 3.9984C35.0466 3.9984 44.0016 12.9534 44.0016 24Z"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+			/>
+		</svg>
+	) : variant === 'positive' ? (
+		<img
+			src="/PrimaryHorizontalPositive.svg"
+			alt="CronoVisión"
+			width={widthCalculado}
+			height={h}
+			class={className}
+			loading="eager"
+		/>
+	) : variant === 'negative' ? (
+		<img
+			src="/PrimaryHorizontalNegative.svg"
+			alt="CronoVisión"
+			width={widthCalculado}
+			height={h}
+			class={className}
+			loading="eager"
+		/>
+	) : (
+		<img
+			src="/PrimaryHorizontal.svg"
+			alt="CronoVisión"
+			width={widthCalculado}
+			height={h}
+			class={className}
+			loading="eager"
+		/>
+	)
+}

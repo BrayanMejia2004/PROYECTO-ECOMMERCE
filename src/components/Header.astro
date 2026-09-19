@@ -11,25 +11,22 @@ const enlaces = [
 const actual = Astro.url.pathname
 ---
 
-<header class="sticky top-0 z-40 border-b border-line bg-ivory/90 backdrop-blur-md">
-	<div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3.5 sm:px-6">
-		<a href="/" class="flex items-center gap-3" aria-label="CronoVisión — inicio">
-			<Logotipo size={34} />
-			<span class="font-serif text-2xl font-semibold tracking-tight text-graphite">
-				Crono<span class="text-gold">Visión</span>
-			</span>
+<header class="sticky top-0 z-40 border-b border-[#212631] bg-ink/95 backdrop-blur-md">
+	<div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 sm:px-6">
+		<a href="/" class="flex items-center" aria-label="CronoVisión — inicio">
+			<Logotipo variant="primary" height={34} class="h-8 w-auto sm:h-9" />
 		</a>
 
-		<nav class="hidden items-center gap-7 md:flex" aria-label="Navegación principal">
+		<nav class="hidden items-center gap-8 md:flex" aria-label="Navegación principal">
 			{
 				enlaces.map((e) => (
 					<a
 						href={e.href}
 						class:list={[
-							'text-sm font-medium tracking-wide transition-colors',
+							'text-xs font-semibold uppercase tracking-widest transition-colors',
 							actual === e.href || (e.href !== '/' && actual.startsWith(e.href))
-								? 'text-gold-deep'
-								: 'text-graphite hover:text-gold-deep',
+								? 'text-gold'
+								: 'text-ivory/70 hover:text-gold',
 						]}
 					>
 						{e.label}
@@ -39,28 +36,28 @@ const actual = Astro.url.pathname
 		</nav>
 
 		<a
-			href="/contacto"
-			class="hidden rounded-full bg-graphite px-5 py-2.5 text-sm font-semibold text-ivory transition-colors hover:bg-gold-deep md:block"
+			href="/relojes"
+			class="hidden rounded-full bg-gold px-5 py-2 text-xs font-bold uppercase tracking-wider text-ink transition-colors hover:bg-gold-light md:block"
 		>
-			Comprar ahora
+			Ver Catálogo
 		</a>
 
 		<details class="group relative md:hidden">
 			<summary
-				class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-line text-graphite"
+				class="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-full border border-[#212631] text-ivory"
 				aria-label="Abrir menú"
 			>
-				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
 					<path d="M4 7h16M4 12h16M4 17h16" class="transition group-open:opacity-0" />
 					<path d="M6 6l12 12M18 6L6 18" class="hidden transition group-open:block" />
 				</svg>
 			</summary>
-			<div class="absolute right-0 mt-3 w-52 rounded-2xl border border-line bg-ivory p-2 shadow-xl">
+			<div class="absolute right-0 mt-3 w-52 rounded-2xl border border-[#212631] bg-graphite p-2 shadow-2xl">
 				{
 					enlaces.map((e) => (
 						<a
 							href={e.href}
-							class="block rounded-lg px-4 py-2.5 text-sm font-medium text-graphite hover:bg-cream hover:text-gold-deep"
+							class="block rounded-lg px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-ivory hover:bg-charcoal hover:text-gold"
 						>
 							{e.label}
 						</a>
