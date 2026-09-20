@@ -1,51 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import ProductCard from '../components/ProductCard.astro'
-import Logotipo from '../components/Logotipo.astro'
-import { getCollection } from 'astro:content'
-import { whatsappLink, MENSAJE_GENERAL } from '../lib/site'
+import Layout from "../layouts/Layout.astro";
+import ProductCard from "../components/ProductCard.astro";
+import Logotipo from "../components/Logotipo.astro";
+import { getCollection } from "astro:content";
+import { whatsappLink, MENSAJE_GENERAL } from "../lib/site";
 
 const MENSAJE_PROMO_POEDAGAR =
-	'Hola CronoVisión, me interesa la promoción de relojes Poedagar: quiero armar un combo de 2. ¿Me cuentas más?'
+	"Hola CronoVisión, me interesa la promoción de relojes Poedagar: quiero armar un combo de 2. ¿Me cuentas más?";
 
-const productos = (await getCollection('products', ({ data }) => data.activo)).sort(
-	(a, b) => Number(b.data.destacado) - Number(a.data.destacado)
-)
-const destacados = productos.filter((p) => p.data.destacado).slice(0, 4)
+const productos = (
+	await getCollection("products", ({ data }) => data.activo)
+).sort((a, b) => Number(b.data.destacado) - Number(a.data.destacado));
+const destacados = productos.filter((p) => p.data.destacado).slice(0, 4);
 
 const beneficios = [
 	{
-		id: 'curaduria',
-		titulo: 'Curaduría & Calibre Verificado',
-		texto: 'Inspección de ensamble, peso y movimiento antes de ingresar al catálogo.',
+		id: "curaduria",
+		titulo: "Curaduría & Calibre Verificado",
+		texto: "Inspección de ensamble, peso y movimiento antes de ingresar al catálogo.",
 	},
 	{
-		id: 'cobertura',
-		titulo: 'Cobertura Nacional Asegurada',
-		texto: 'Despacho prioritario a cualquier ciudad con guía de rastreo punto a punto.',
+		id: "cobertura",
+		titulo: "Cobertura Nacional Asegurada",
+		texto: "Despacho prioritario a cualquier ciudad con guía de rastreo punto a punto.",
 	},
 	{
-		id: 'concierge',
-		titulo: 'Concierge en Vivo por WhatsApp',
-		texto: 'Solicita video real del reloj en muñeca y resuelve dudas técnicas en tiempo real.',
+		id: "concierge",
+		titulo: "Concierge en Vivo por WhatsApp",
+		texto: "Solicita video real del reloj en muñeca y resuelve dudas técnicas en tiempo real.",
 	},
 	{
-		id: 'transparencia',
-		titulo: 'Transparencia en Cada Orden',
-		texto: 'Coordinación directa de pago y entrega, sin sorpresas ni comisiones ocultas.',
+		id: "transparencia",
+		titulo: "Transparencia en Cada Orden",
+		texto: "Coordinación directa de pago y entrega, sin sorpresas ni comisiones ocultas.",
 	},
-]
+];
 
 const testimonios = [
 	{
-		nombre: 'Mariana R.',
-		texto: 'Compré mi primer reloj de la tienda y la asesoría por WhatsApp fue excelente. Llegó perfecto a Bogotá.',
+		nombre: "Mariana R.",
+		texto: "Compré mi primer reloj de la tienda y la asesoría por WhatsApp fue excelente. Llegó perfecto a Bogotá.",
 	},
 	{
-		nombre: 'Andrés G.',
-		texto: 'El reloj llegó impecable y muy bien empacado. La calidad se nota en cada detalle.',
+		nombre: "Andrés G.",
+		texto: "El reloj llegó impecable y muy bien empacado. La calidad se nota en cada detalle.",
 	},
-]
+];
 ---
 
 <Layout
@@ -56,37 +56,55 @@ const testimonios = [
 	<script
 		type="application/ld+json"
 		set:html={JSON.stringify({
-			'@context': 'https://schema.org',
-			'@type': 'OnlineStore',
-			name: 'CronoVisión',
-			url: 'https://cronovision.vercel.app',
+			"@context": "https://schema.org",
+			"@type": "OnlineStore",
+			name: "CronoVisión",
+			url: "https://cronovision.vercel.app",
 			description:
-				'Tienda de relojes para hombre en Colombia con marcas como Poedagar y JoeFox. Asesoría en vivo por WhatsApp y despachos asegurados a todo el país.',
-			telephone: '+573024550409',
-			priceRange: '$$',
-			currenciesAccepted: 'COP',
-			paymentAccepted: 'Transferencia bancaria, Nequi, Daviplata, Coordinación directa',
+				"Tienda de relojes para hombre en Colombia con marcas como Poedagar y JoeFox. Asesoría en vivo por WhatsApp y despachos asegurados a todo el país.",
+			telephone: "+573024550409",
+			priceRange: "$$",
+			currenciesAccepted: "COP",
+			paymentAccepted:
+				"Transferencia bancaria, Nequi, Daviplata, Coordinación directa",
 			areaServed: {
-				'@type': 'Country',
-				name: 'Colombia',
+				"@type": "Country",
+				name: "Colombia",
 			},
 		})}
 	/>
 
 	<!-- Hero -->
 	<section class="border-b border-[#212631] bg-ink text-ivory">
-		<div class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:py-28">
+		<div
+			class="mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 md:grid-cols-2 md:py-28"
+		>
 			<div>
-				<div class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1">
+				<div
+					class="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3.5 py-1"
+				>
 					<span class="h-1.5 w-1.5 rounded-full bg-gold"></span>
-					<p class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold">Curaduría Horológica // Colombia</p>
+					<p
+						class="text-[10px] font-bold uppercase tracking-[0.25em] text-gold"
+					>
+						Curaduría Horológica // Colombia
+					</p>
 				</div>
-				<h1 class="mt-5 font-serif text-4xl font-bold leading-[1.25] pb-2 sm:text-5xl lg:text-6xl">
-					Relojes para hombre en Colombia: <span class="text-gold inline-block pb-1">precisión y presencia en tu muñeca.</span>
+				<h1
+					class="mt-5 font-serif text-4xl font-bold leading-[0.625] pb-2 sm:text-5xl lg:text-6xl"
+				>
+					Relojes para hombre en Colombia: <span
+						class="text-gold inline-block pb-1"
+						>precisión y presencia en tu muñeca.</span
+					>
 				</h1>
-				<p class="mt-5 max-w-lg text-base leading-relaxed text-ivory/75">
-					Piezas seleccionadas para quienes entienden que el detalle define al individuo.
-					Verificación con video en vivo por WhatsApp y despachos asegurados a cualquier ciudad de Colombia.
+				<p
+					class="mt-5 max-w-lg text-base leading-relaxed text-ivory/75"
+				>
+					Piezas seleccionadas para quienes entienden que el detalle
+					define al individuo. Verificación con video en vivo por
+					WhatsApp y despachos asegurados a cualquier ciudad de
+					Colombia.
 				</p>
 				<div class="mt-8 flex flex-wrap items-center gap-4">
 					<a
@@ -94,12 +112,23 @@ const testimonios = [
 						class="inline-flex items-center gap-2 rounded-full bg-gold px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-ink shadow-lg shadow-gold/20 transition-all duration-300 hover:bg-gold-light hover:shadow-gold/30 active:scale-95"
 					>
 						Explorar Colección
-						<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M5 12h14M12 5l7 7-7 7" />
+						<svg
+							width="14"
+							height="14"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2.5"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M5 12h14M12 5l7 7-7 7"></path>
 						</svg>
 					</a>
 					<a
-						href={whatsappLink('Hola CronoVisión, me gustaría conocer la disponibilidad de los modelos destacados.')}
+						href={whatsappLink(
+							"Hola CronoVisión, me gustaría conocer la disponibilidad de los modelos destacados.",
+						)}
 						target="_blank"
 						rel="noopener"
 						class="inline-flex items-center gap-2 rounded-full border border-ivory/20 px-6 py-3.5 text-xs font-semibold uppercase tracking-wider text-ivory transition-colors hover:border-gold hover:text-gold"
@@ -118,9 +147,17 @@ const testimonios = [
 					loading="eager"
 					class="mx-auto aspect-square w-full max-w-md rounded-[2.5rem] border border-ivory/10 object-cover shadow-2xl shadow-black/70"
 				/>
-				<div class="absolute -left-4 bottom-8 rounded-2xl border border-ivory/15 bg-graphite/90 px-5 py-3.5 backdrop-blur-md shadow-xl">
-					<p class="text-[10px] font-bold uppercase tracking-widest text-gold">Cobertura Nacional</p>
-					<p class="font-serif text-sm font-semibold text-ivory">Guía y Entrega Asegurada</p>
+				<div
+					class="absolute -left-4 bottom-8 rounded-2xl border border-ivory/15 bg-graphite/90 px-5 py-3.5 backdrop-blur-md shadow-xl"
+				>
+					<p
+						class="text-[10px] font-bold uppercase tracking-widest text-gold"
+					>
+						Cobertura Nacional
+					</p>
+					<p class="font-serif text-sm font-semibold text-ivory">
+						Guía y Entrega Asegurada
+					</p>
 				</div>
 			</div>
 		</div>
@@ -128,41 +165,83 @@ const testimonios = [
 
 	<!-- Beneficios / confianza -->
 	<section class="border-b border-line bg-white">
-		<div class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4">
+		<div
+			class="mx-auto grid max-w-7xl gap-8 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-4"
+		>
 			{
 				beneficios.map((b) => (
 					<div class="flex items-start gap-3.5">
 						<span class="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-gold/30 bg-gold/10 text-gold-deep">
-							{b.id === 'curaduria' && (
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+							{b.id === "curaduria" && (
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.75"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
 									<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
 									<path d="m9 12 2 2 4-4" />
 								</svg>
 							)}
-							{b.id === 'cobertura' && (
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+							{b.id === "cobertura" && (
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.75"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
 									<path d="M5 18H3c-.6 0-1-.4-1-1V7c0-.6.4-1 1-1h10c.6 0 1 .4 1 1v11" />
 									<path d="M14 9h4l4 4v4c0 .6-.4 1-1 1h-2" />
 									<circle cx="7" cy="18" r="2" />
 									<circle cx="17" cy="18" r="2" />
 								</svg>
 							)}
-							{b.id === 'concierge' && (
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+							{b.id === "concierge" && (
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.75"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
 									<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
 									<path d="m10 8 5 3-5 3V8z" />
 								</svg>
 							)}
-							{b.id === 'transparencia' && (
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+							{b.id === "transparencia" && (
+								<svg
+									width="20"
+									height="20"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="1.75"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
 									<circle cx="12" cy="12" r="9" />
 									<path d="m9 12 2 2 4-4" />
 								</svg>
 							)}
 						</span>
 						<div>
-							<p class="font-bold text-graphite text-sm leading-snug">{b.titulo}</p>
-							<p class="mt-1 text-xs leading-relaxed text-smoke">{b.texto}</p>
+							<p class="font-bold text-graphite text-sm leading-snug">
+								{b.titulo}
+							</p>
+							<p class="mt-1 text-xs leading-relaxed text-graphite/70">
+								{b.texto}
+							</p>
 						</div>
 					</div>
 				))
@@ -174,8 +253,14 @@ const testimonios = [
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
 		<div class="mb-10 flex items-end justify-between">
 			<div>
-				<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">Categorías</p>
-				<h2 class="mt-2 font-serif text-3xl text-graphite sm:text-4xl">Explora la colección</h2>
+				<p
+					class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep"
+				>
+					Categorías
+				</p>
+				<h2 class="mt-2 font-serif text-3xl text-graphite sm:text-4xl">
+					Explora la colección
+				</h2>
 			</div>
 		</div>
 
@@ -192,14 +277,34 @@ const testimonios = [
 					loading="lazy"
 					class="aspect-4/3 w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
 				/>
-				<div class="absolute inset-0 bg-linear-to-t from-ink/85 via-ink/20 to-transparent" />
+				<div
+					class="absolute inset-0 bg-linear-to-t from-ink/85 via-ink/20 to-transparent"
+				>
+				</div>
 				<div class="absolute bottom-0 left-0 p-7">
-					<p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Relojes</p>
-					<p class="mt-2 max-w-xs text-sm text-ivory/75">Cronógrafos y clásicos de precisión para cada ocasión.</p>
-					<span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-ivory">
+					<p
+						class="text-xs font-semibold uppercase tracking-[0.25em] text-gold"
+					>
+						Relojes
+					</p>
+					<p class="mt-2 max-w-xs text-sm text-ivory/75">
+						Cronógrafos y clásicos de precisión para cada ocasión.
+					</p>
+					<span
+						class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-ivory"
+					>
 						Ver catálogo
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M5 12h14M13 6l6 6-6 6" />
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M5 12h14M13 6l6 6-6 6"></path>
 						</svg>
 					</span>
 				</div>
@@ -211,7 +316,9 @@ const testimonios = [
 				rel="noopener"
 				class="group relative flex flex-col overflow-hidden rounded-4xl bg-graphite transition-transform duration-300 hover:-translate-y-1"
 			>
-				<span class="absolute left-0 top-5 z-10 rounded-r-full bg-gold px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-ink">
+				<span
+					class="absolute left-0 top-5 z-10 rounded-r-full bg-gold px-4 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-ink"
+				>
 					Promoción
 				</span>
 				<div class="flex flex-1 items-stretch gap-3 p-5">
@@ -233,17 +340,35 @@ const testimonios = [
 					/>
 				</div>
 				<div class="px-7 pb-7">
-					<p class="text-xs font-semibold uppercase tracking-[0.25em] text-gold">Poedagar</p>
-					<h3 class="mt-2 font-serif text-2xl leading-[1.3] pb-1 text-ivory">
+					<p
+						class="text-xs font-semibold uppercase tracking-[0.25em] text-gold"
+					>
+						Poedagar
+					</p>
+					<h3
+						class="mt-2 font-serif text-2xl leading-[1.3] pb-1 text-ivory"
+					>
 						Elige 2 relojes Poedagar y arma tu oferta
 					</h3>
 					<p class="mt-2 text-sm leading-relaxed text-ivory/75">
-						Combina los colores que más te gusten. Escríbenos por WhatsApp y coordinamos tu promoción.
+						Combina los colores que más te gusten. Escríbenos por
+						WhatsApp y coordinamos tu promoción.
 					</p>
-					<span class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gold">
+					<span
+						class="mt-4 inline-flex items-center gap-2 text-sm font-bold text-gold"
+					>
 						Armar promoción
-						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-							<path d="M5 12h14M13 6l6 6-6 6" />
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<path d="M5 12h14M13 6l6 6-6 6"></path>
 						</svg>
 					</span>
 				</div>
@@ -256,10 +381,21 @@ const testimonios = [
 		<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
 			<div class="mb-10 flex items-end justify-between gap-4">
 				<div>
-					<p class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep">Destacados</p>
-					<h2 class="mt-2 font-serif text-3xl text-graphite sm:text-4xl">Los favoritos de la semana</h2>
+					<p
+						class="text-xs font-semibold uppercase tracking-[0.3em] text-gold-deep"
+					>
+						Destacados
+					</p>
+					<h2
+						class="mt-2 font-serif text-3xl text-graphite sm:text-4xl"
+					>
+						Los favoritos de la semana
+					</h2>
 				</div>
-				<a href="/relojes" class="hidden shrink-0 text-sm font-bold text-gold-deep hover:text-gold sm:block">
+				<a
+					href="/relojes"
+					class="hidden shrink-0 text-sm font-bold text-gold-deep hover:text-gold sm:block"
+				>
 					Ver todo →
 				</a>
 			</div>
@@ -267,11 +403,15 @@ const testimonios = [
 			{
 				destacados.length > 0 ? (
 					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-						{destacados.map((p) => <ProductCard producto={p} />)}
+						{destacados.map((p) => (
+							<ProductCard producto={p} />
+						))}
 					</div>
 				) : (
 					<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-						{productos.slice(0, 4).map((p) => <ProductCard producto={p} />)}
+						{productos.slice(0, 4).map((p) => (
+							<ProductCard producto={p} />
+						))}
 					</div>
 				)
 			}
@@ -281,17 +421,37 @@ const testimonios = [
 	<!-- Cómo comprar -->
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
 		<div class="grid gap-6 md:grid-cols-3">
-			{[
-				{ n: '01', t: 'Elige tus productos', d: 'Navega por la colección y añade a tu lista lo que más te guste.' },
-				{ n: '02', t: 'Escríbenos por WhatsApp', d: 'Te llega tu lista armada automáticamente. Pregunta precios, tallas y stock.' },
-				{ n: '03', t: 'Recibe en tu casa', d: 'Coordinamos pago y envío. Tu pedido llega a todo Colombia.' },
-			].map((s) => (
-				<div class="rounded-3xl border border-line bg-white p-8">
-					<p class="font-serif text-5xl italic text-gold/40">{s.n}</p>
-					<h3 class="mt-4 text-lg font-bold text-graphite">{s.t}</h3>
-					<p class="mt-2 text-sm leading-relaxed text-smoke">{s.d}</p>
-				</div>
-			))}
+			{
+				[
+					{
+						n: "01",
+						t: "Elige tus productos",
+						d: "Navega por la colección y añade a tu lista lo que más te guste.",
+					},
+					{
+						n: "02",
+						t: "Escríbenos por WhatsApp",
+						d: "Te llega tu lista armada automáticamente. Pregunta precios, tallas y stock.",
+					},
+					{
+						n: "03",
+						t: "Recibe en tu casa",
+						d: "Coordinamos pago y envío. Tu pedido llega a todo Colombia.",
+					},
+				].map((s) => (
+					<div class="rounded-3xl border border-line bg-white p-8">
+						<p class="font-serif text-5xl italic text-gold/40">
+							{s.n}
+						</p>
+						<h3 class="mt-4 text-lg font-bold text-graphite">
+							{s.t}
+						</h3>
+						<p class="mt-2 text-sm leading-relaxed text-graphite/70">
+							{s.d}
+						</p>
+					</div>
+				))
+			}
 		</div>
 	</section>
 
@@ -299,18 +459,36 @@ const testimonios = [
 	<section class="border-y border-[#212631] bg-ink text-ivory">
 		<div class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
 			<div class="text-center md:text-left">
-				<p class="text-xs font-bold uppercase tracking-[0.25em] text-gold">Experiencia Real</p>
-				<h2 class="mt-2 font-serif text-3xl font-bold text-ivory sm:text-4xl">Confianza Comprobada</h2>
+				<p
+					class="text-xs font-bold uppercase tracking-[0.25em] text-gold"
+				>
+					Experiencia Real
+				</p>
+				<h2
+					class="mt-2 font-serif text-3xl font-bold text-ivory sm:text-4xl"
+				>
+					Confianza Comprobada
+				</h2>
 			</div>
 			<div class="mt-10 grid gap-6 md:grid-cols-2">
 				{
 					testimonios.map((t) => (
 						<figure class="rounded-3xl border border-[#212631] bg-graphite p-8 transition-colors hover:border-gold/30">
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="#c8a25d" aria-hidden="true">
+							<svg
+								width="24"
+								height="24"
+								viewBox="0 0 24 24"
+								fill="#c8a25d"
+								aria-hidden="true"
+							>
 								<path d="M10 7H7a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h1v-2H7a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h3V7Zm11 0h-3a4 4 0 0 0-4 4v2a4 4 0 0 0 4 4h1v-2h-1a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h3V7Z" />
 							</svg>
-							<blockquote class="mt-4 text-base leading-relaxed text-ivory/85">“{t.texto}”</blockquote>
-							<figcaption class="mt-5 text-sm font-semibold text-gold">{t.nombre}</figcaption>
+							<blockquote class="mt-4 text-base leading-relaxed text-ivory/85">
+								“{t.texto}”
+							</blockquote>
+							<figcaption class="mt-5 text-sm font-semibold text-gold">
+								{t.nombre}
+							</figcaption>
 						</figure>
 					))
 				}
@@ -320,22 +498,35 @@ const testimonios = [
 
 	<!-- CTA final -->
 	<section class="mx-auto max-w-7xl px-4 py-20 sm:px-6">
-		<div class="flex flex-col items-center gap-6 rounded-4xl border border-[#212631] bg-graphite px-8 py-14 text-center shadow-2xl">
+		<div
+			class="flex flex-col items-center gap-6 rounded-4xl border border-[#212631] bg-graphite px-8 py-14 text-center shadow-2xl"
+		>
 			<Logotipo variant="primary" height={42} class="h-10 w-auto" />
-			<h2 class="max-w-xl font-serif text-3xl font-bold leading-[1.3] pb-1.5 text-ivory sm:text-4xl">
-				¿Deseas verificar una pieza en <span class="text-gold inline-block pb-1">muñeca antes de ordenar?</span>
+			<h2
+				class="max-w-xl font-serif text-3xl font-bold leading-[1.3] pb-1.5 text-ivory sm:text-4xl"
+			>
+				¿Deseas verificar una pieza en <span
+					class="text-gold inline-block pb-1"
+					>muñeca antes de ordenar?</span
+				>
 			</h2>
 			<p class="max-w-lg text-sm leading-relaxed text-ivory/70">
-				Escríbenos directamente por WhatsApp. Te compartimos videos reales en tiempo real, resolvemos cualquier duda de dimensiones o calibre y coordinamos tu despacho asegurado.
+				Escríbenos directamente por WhatsApp. Te compartimos videos
+				reales en tiempo real, resolvemos cualquier duda de dimensiones
+				o calibre y coordinamos tu despacho asegurado.
 			</p>
 			<a
-				href={whatsappLink('Hola CronoVisión, me gustaría solicitar video en muñeca y asesoría sobre un reloj.')}
+				href={whatsappLink(
+					"Hola CronoVisión, me gustaría solicitar video en muñeca y asesoría sobre un reloj.",
+				)}
 				target="_blank"
 				rel="noopener"
 				class="inline-flex items-center gap-3 rounded-full bg-[#25d366] px-8 py-4 text-xs font-bold uppercase tracking-wider text-white shadow-xl shadow-[#25d366]/20 transition-all duration-300 hover:bg-[#20ba59] hover:shadow-[#25d366]/30 active:scale-95"
 			>
 				<svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
-					<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
+					<path
+						d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"
+					></path>
 				</svg>
 				Solicitar Video en Muñeca por WhatsApp
 			</a>
